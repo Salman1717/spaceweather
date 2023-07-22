@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './toprec.dart';
+import './weatherinfo.dart';
 
 const Color g1 = Color(0xFF000000);
 const Color g2 = Color(0xFF0F0F29);
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
                 child:
-                TopRec()
+                WeatherInfo()
               ),
       ),
     );

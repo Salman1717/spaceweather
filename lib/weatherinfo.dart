@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-class TopRec extends StatelessWidget {
-  const TopRec({super.key});
+class WeatherInfo extends StatelessWidget {
+  const WeatherInfo({super.key});
 
 
   @override
