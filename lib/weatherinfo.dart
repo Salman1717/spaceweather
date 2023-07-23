@@ -110,23 +110,97 @@ class WeatherInfo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-
+                Stack(
+                  children: [
                 Container(
                     width: 165,
                     height: 150,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Color(0xffd9d9d9))
+                        color: Colors.white.withOpacity(0.2))
+                ),
+                
+                Positioned(
+                    top: 26,
+                    left: 18 ,
+                    child: Text(
+                    "Air Quality",
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                    )
+                )),
+                
+                Positioned(
+                  top: 60,
+                    left: 53,
+                    child: Text(
+                    "51*",
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.orange,
+                    )
+                )),
+
+                
+                Positioned(
+                    top: 107,
+                    left: 35,
+                    child: Text(
+                    "Moderate",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.orange,
+                    )
+                )),
+                  ]
                 ),
 
-
+                Stack(
+                  children:[
                 Container(
                     width: 165,
                     height: 150,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Color(0xffd9d9d9))
-                )
+                        color: Colors.white.withOpacity(0.2))
+                ),
+                    Positioned(
+                        top: 26,
+                        left: 28 ,
+                        child: Text(
+                            "UV Index",
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                            )
+                        )),
+
+                    Positioned(
+                        top: 60,
+                        left: 63,
+                        child: Text(
+                            "5",
+                            style: TextStyle(
+                              fontSize: 40,
+                              color: Colors.orange,
+                            )
+                        )),
+
+
+                    Positioned(
+                        top: 107,
+                        right: 38,
+                        child: Text(
+                            "Moderate",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.orange,
+                            )
+                        )),
+
+                ]
+                ),
               ],
 
             ),
