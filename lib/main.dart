@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spacewether/statefului.dart';
 import './weatherinfo.dart';
 
 const Color g1 = Color(0xFF000000);
