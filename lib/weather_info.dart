@@ -8,17 +8,21 @@ class WeatherInfo extends StatefulWidget {
 
 class _WeatherInfoState extends State<WeatherInfo> {
   WeatherApi _api = WeatherApi();
-  String _city = 'Ratnagiri'; // Replace this with your desired city
+  String _city = ''; // Replace this with your desired city
 
   String _temperature = '';
   String _airQuality = '';
   String _humidity = '';
+  String _day = '';
 
   String _weatherCondition = '';
 
   @override
   void initState() {
     super.initState();
+    _fetchWeatherData();
+  }
+  void _refreshWeather() {
     _fetchWeatherData();
   }
 
@@ -30,9 +34,30 @@ class _WeatherInfoState extends State<WeatherInfo> {
         _airQuality = weatherData['airQuality'].toString(); // Replace with actual air quality data if available
         _humidity = weatherData['main']['humidity'].toString();
         _weatherCondition = weatherData['weather'][0]['description'];
+        _day = _getDayOfWeek(DateTime.now().weekday);
       });
     } catch (e) {
       print('Error fetching weather data: $e');
+    }
+  }
+  String _getDayOfWeek(int day) {
+    switch (day) {
+      case 1:
+        return 'Monday';
+      case 2:
+        return 'Tuesday';
+      case 3:
+        return 'Wednesday';
+      case 4:
+        return 'Thursday';
+      case 5:
+        return 'Friday';
+      case 6:
+        return 'Saturday';
+      case 7:
+        return 'Sunday';
+      default:
+        return '';
     }
   }
 
@@ -46,6 +71,29 @@ class _WeatherInfoState extends State<WeatherInfo> {
 
             mainAxisSize: MainAxisSize.min,
             children: [
+
+              TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _city = value; // Update the city variable with user input
+                  });
+                },
+                decoration: InputDecoration(
+                  labelText: 'Enter a city name',
+                ),
+              ),
+              ElevatedButton(
+                onPressed: _refreshWeather,
+                child: Text('Refresh'),
+              ),
+
+              TextField(
+                onChanged: (value) {
+                  // The user input as a string will be available in 'value'
+                  print(value);
+                },
+              ),
+
 
               const Text("Earth",
                 style: TextStyle(
@@ -122,7 +170,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                       top: 95,
                       right: 8,
                       child: Text(
-                          "19th July, Wednesday",
+                          "19th July, $_day",
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.white,
