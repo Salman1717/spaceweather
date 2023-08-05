@@ -8,7 +8,7 @@ class WeatherInfo extends StatefulWidget {
 
 class _WeatherInfoState extends State<WeatherInfo> {
   WeatherApi _api = WeatherApi();
-  String _city = 'London'; // Replace this with your desired city
+  String _city = 'Ratnagiri'; // Replace this with your desired city
 
   String _temperature = '';
   String _airQuality = '';
