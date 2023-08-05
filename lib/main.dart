@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:spacewether/HomeScreen.dart';
 
 import './weather_info.dart';
+
+import 'SolarAnime.dart';
 
 
 const Color g1 = Color(0xFF000000);
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
                 child:
-                  WeatherInfo(),
+                 HomeScreen(),
 
               ),
       ),
