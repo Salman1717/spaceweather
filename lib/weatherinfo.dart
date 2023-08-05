@@ -13,11 +13,20 @@ class WeatherInfo extends StatelessWidget {
         top: true,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body:Container(
+        body:SingleChildScrollView(
+        child: Container(
        child: Column(
 
           mainAxisSize: MainAxisSize.min,
           children: [
+
+            const Text("Earth",
+            style: TextStyle(
+              fontSize: 35,
+              color: Colors.white,
+            ),),
+
+            const SizedBox(height: 30 ),
 
             Stack(
               children:[
@@ -180,10 +189,10 @@ class WeatherInfo extends StatelessWidget {
                         top: 60,
                         left: 63,
                         child: Text(
-                            "5",
+                            "1",
                             style: TextStyle(
                               fontSize: 40,
-                              color: Colors.orange,
+                              color: Colors.green,
                             )
                         )),
 
@@ -192,10 +201,10 @@ class WeatherInfo extends StatelessWidget {
                         top: 107,
                         right: 38,
                         child: Text(
-                            "Moderate",
+                            "Good    ",
                             style: TextStyle(
                               fontSize: 20,
-                              color: Colors.orange,
+                              color: Colors.green,
                             )
                         )),
 
@@ -204,8 +213,24 @@ class WeatherInfo extends StatelessWidget {
               ],
 
             ),
+            SizedBox(height: 20,),
+            Text(
+                "Explore SolarSystem :",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+
+                )
+            ),
+            SizedBox(height: 20,),
+            
+            Image.asset("assets/Earth.png",
+            width:320,
+            height: 292,)
           ],
         ),
+      ),
       ),
       ),
         ),
