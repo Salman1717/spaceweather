@@ -14,6 +14,8 @@ class _WeatherInfoState extends State<WeatherInfo> {
   String _airQuality = '';
   String _humidity = '';
 
+  String _weatherCondition = '';
+
   @override
   void initState() {
     super.initState();
@@ -27,6 +29,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
         _temperature = (weatherData['main']['temp'] - 273.15).toStringAsFixed(1);
         _airQuality = weatherData['airQuality'].toString(); // Replace with actual air quality data if available
         _humidity = weatherData['main']['humidity'].toString();
+        _weatherCondition = weatherData['weather'][0]['description'];
       });
     } catch (e) {
       print('Error fetching weather data: $e');
@@ -35,29 +38,228 @@ class _WeatherInfoState extends State<WeatherInfo> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Weather Information'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Temperature: $_temperature °C',
-              style: TextStyle(fontSize: 24),
-            ),
-            Text(
-              'Air Quality: $_airQuality',
-              style: TextStyle(fontSize: 24),
-            ),
-            Text(
-              'Humidity: $_humidity %',
-              style: TextStyle(fontSize: 24),
-            ),
-          ],
+    return  SafeArea(child: Scaffold(
+      backgroundColor: Colors.transparent,
+      body:SingleChildScrollView(
+        child: Container(
+          child: Column(
+
+            mainAxisSize: MainAxisSize.min,
+            children: [
+
+              const Text("Earth",
+                style: TextStyle(
+                  fontSize: 35,
+                  color: Colors.white,
+                ),),
+
+              const SizedBox(height: 30 ),
+
+              Stack(
+                children:[
+                  Container(
+                      width: 390,
+                      height: 150,
+                      padding: EdgeInsets.all(20.0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white.withOpacity(0.2))
+                  ),
+                  Positioned(
+                      top: 15,
+                      left: 15,
+                      child:
+                      Image.asset('assets/suncloud.png',
+                        width: 68,
+                        height: 64,
+                      )),
+
+                  Positioned(
+                      top:82,
+                      left: 15,
+                      child: Text(
+                          "$_weatherCondition",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          )
+                      )),
+
+                  Positioned(
+                      top: 105,
+                      left: 15,
+                      child: Text(
+                          "Precipitation: 100%",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          )
+                      )),
+
+                  Positioned(
+                      top: 126,
+                      left: 15,
+                      child: Text(
+                          "Humidity: $_humidity",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          )
+                      )),
+
+                  Positioned(
+                      top: 28,
+                      right: 24,
+                      child: Text(
+                          "$_temperature",
+                          style: TextStyle(
+                            fontSize: 48,
+                            color: Colors.white,
+                          )
+                      )),
+
+                  Positioned(
+                      top: 95,
+                      right: 8,
+                      child: Text(
+                          "19th July, Wednesday",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                          )
+                      )),
+
+                  Positioned(
+                      top: 127,
+                      right: 8,
+                      child: Text(
+                          "Ratnagiri, Maharashtra",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.white,
+                          )
+                      )),
+
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Stack(
+                      children: [
+                        Container(
+                            width: 165,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.white.withOpacity(0.2))
+                        ),
+
+                        Positioned(
+                            top: 26,
+                            left: 18 ,
+                            child: Text(
+                                "Air Quality",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  color: Colors.white,
+                                )
+                            )),
+
+                        Positioned(
+                            top: 60,
+                            left: 53,
+                            child: Text(
+                                "$_airQuality",
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  color: Colors.orange,
+                                )
+                            )),
+
+
+                        Positioned(
+                            top: 107,
+                            left: 35,
+                            child: Text(
+                                "Moderate",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.orange,
+                                )
+                            )),
+                      ]
+                  ),
+
+                  Stack(
+                      children:[
+                        Container(
+                            width: 165,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.white.withOpacity(0.2))
+                        ),
+                        Positioned(
+                            top: 26,
+                            left: 28 ,
+                            child: Text(
+                                "UV Index",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  color: Colors.white,
+                                )
+                            )),
+
+                        Positioned(
+                            top: 60,
+                            left: 63,
+                            child: Text(
+                                "1",
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  color: Colors.green,
+                                )
+                            )),
+
+
+                        Positioned(
+                            top: 107,
+                            right: 38,
+                            child: Text(
+                                "Good    ",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.green,
+                                )
+                            )),
+
+                      ]
+                  ),
+                ],
+
+              ),
+              SizedBox(height: 20,),
+              Text(
+                  "Explore SolarSystem :",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.white,
+
+                  )
+              ),
+              SizedBox(height: 20,),
+
+              Image.asset("assets/Earth.png",
+                width:320,
+                height: 292,)
+            ],
+          ),
         ),
       ),
+    ),
     );
   }
 }
