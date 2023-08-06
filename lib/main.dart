@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
                 child:
-                 HomeScreen(),
+                WeatherInfo(),
 
               ),
       ),

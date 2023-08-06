@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'SolarAnimation.dart';
+
 import 'SolarAnime.dart';
 
 
