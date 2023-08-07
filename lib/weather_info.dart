@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'weather_api.dart';
 import 'package:intl/intl.dart';
+import'./search_bar.dart';
 
 class WeatherInfo extends StatefulWidget {
+  const WeatherInfo({super.key});
+
   @override
   _WeatherInfoState createState() => _WeatherInfoState();
 }
 
 class _WeatherInfoState extends State<WeatherInfo> {
   WeatherApi _api = WeatherApi();
-  String _city = ''; // Replace this with your desired city
+  String _city = 'Ratnagiri';
 
   String _temperature = '';
   String _humidity = '';
@@ -18,6 +21,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
   String _weatherCondition = '';
   String _currentDate = '';
   String _currentTime = '';
+  String _uvIndex ='';
 
   @override
   void initState() {
@@ -32,23 +36,69 @@ class _WeatherInfoState extends State<WeatherInfo> {
   Future<void> _fetchWeatherData() async {
     try {
       final weatherData = await _api.fetchWeatherData(_city);
+      final int _timezoneOffset = weatherData['timezone'];
+
       final timestamp = weatherData['dt'];
-      final dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
-      final formattedDate = DateFormat.yMMMMd().format(dateTime);
-      final formattedTime = DateFormat.jm().format(dateTime);
+      final utcDateTime = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000, isUtc: true);
+      final localDateTime = utcDateTime.add(Duration(seconds: _timezoneOffset));
+
+      final formattedDate = DateFormat.yMMMMd().format(localDateTime);
+      final formattedTime = DateFormat.jm().format(localDateTime);
+
       setState(() {
         _temperature = (weatherData['main']['temp'] - 273.15).toStringAsFixed(1);
         _humidity = weatherData['main']['humidity'].toString();
         _weatherCondition = weatherData['weather'][0]['description'];
-        _day = _getDayOfWeek(DateTime.now().weekday);
+        _day = _getDayOfWeek(localDateTime.weekday);
         _country = weatherData['sys']['country'];
+        _uvIndex = weatherData['hourly.uvi'].toString();
         _currentTime = formattedTime;
         _currentDate = formattedDate;
       });
     } catch (e) {
-      print('Error fetching weather data: $e');
+      _showErrorDialog('Error fetching weather data: $e');
     }
   }
+
+
+
+
+  void _showErrorDialog(String error) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Colors.white,
+        title: const Text(
+          'Error',
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.blue,
+          ),
+        ),
+        content: Text(
+          error,
+          style: const TextStyle(
+            fontSize: 16,
+            color: Colors.redAccent,
+          ),
+        ),
+        actions: <Widget>[
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text(
+              'OK',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
 
   String _getDayOfWeek(int day) {
     switch (day) {
@@ -82,53 +132,22 @@ class _WeatherInfoState extends State<WeatherInfo> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Text(
-                  "Earth",
+                  "Weather",
                   style: TextStyle(
                     fontSize: 35,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            _city = value;
-                          });
-                        },
-                        style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          filled: true,
-                          fillColor: Colors.white.withOpacity(0.2),
-                          labelText: 'Enter a city name',
-                          labelStyle: TextStyle(color: Colors.white),
-                          contentPadding:
-                          const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 10),
-                    ElevatedButton(
-                      onPressed: _refreshWeather,
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white.withOpacity(0),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      child: Image.asset(
-                        'assets/search.png',
-                        width: 35,
-                        height: 35,
-                      ),
-                    ),
-                  ],
+                const SizedBox(height: 20),
+
+                SearchBart(
+                  city: _city,
+                  onCityChanged: (newCity) {
+                    setState(() {
+                      _city = newCity;
+                    });
+                  },
+                  onRefreshWeather: _refreshWeather,
                 ),
                 const SizedBox(height: 30),
                 Stack(
@@ -136,7 +155,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                     Container(
                       width: 390,
                       height: 150,
-                      padding: EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(20.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Colors.white.withOpacity(0.2),
@@ -155,14 +174,14 @@ class _WeatherInfoState extends State<WeatherInfo> {
                       top: 82,
                       left: 15,
                       child: Text(
-                        "$_weatherCondition",
-                        style: TextStyle(
+                        _weatherCondition,
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
                         ),
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       top: 105,
                       left: 15,
                       child: Text(
@@ -178,7 +197,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                       left: 15,
                       child: Text(
                         "Humidity: $_humidity",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           color: Colors.white,
                         ),
@@ -189,7 +208,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                       right: 8,
                       child: Text(
                         "$_temperature℃ ",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 40,
                           color: Colors.white,
                         ),
@@ -200,7 +219,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                       right: 8,
                       child: Text(
                         "$_currentDate. $_day",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           color: Colors.white,
                         ),
@@ -211,7 +230,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                       right: 8,
                       child: Text(
                         "$_city, $_country",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -220,7 +239,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -234,24 +253,24 @@ class _WeatherInfoState extends State<WeatherInfo> {
                             color: Colors.white.withOpacity(0.2),
                           ),
                         ),
-                        Positioned(
-                          top: 26,
-                          left: 18,
+                        const Positioned(
+                          top: 19,
+                          left: 33,
                           child: Text(
                             "Time",
                             style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 35,
                               color: Colors.white,
                             ),
                           ),
                         ),
                         Positioned(
-                          top: 60,
-                          left: 53,
+                          top: 78,
+                          left: 12,
                           child: Text(
                             _currentTime,
-                            style: TextStyle(
-                              fontSize: 40,
+                            style: const TextStyle(
+                              fontSize: 30,
                               color: Colors.orange,
                             ),
                           ),
@@ -268,7 +287,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                             color: Colors.white.withOpacity(0.2),
                           ),
                         ),
-                        Positioned(
+                        const Positioned(
                           top: 26,
                           left: 28,
                           child: Text(
@@ -279,18 +298,18 @@ class _WeatherInfoState extends State<WeatherInfo> {
                             ),
                           ),
                         ),
-                        Positioned(
+                         Positioned(
                           top: 60,
                           left: 63,
                           child: Text(
-                            "Na",
+                            "$_uvIndex",
                             style: TextStyle(
                               fontSize: 40,
                               color: Colors.green,
                             ),
                           ),
                         ),
-                        Positioned(
+                        const Positioned(
                           top: 107,
                           right: 38,
                           child: Text(
@@ -305,8 +324,8 @@ class _WeatherInfoState extends State<WeatherInfo> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   "Explore SolarSystem :",
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -314,12 +333,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 20),
-                Image.asset(
-                  "assets/Earth.png",
-                  width: 320,
-                  height: 292,
-                ),
+                const SizedBox(height: 20),
               ],
             ),
           ),

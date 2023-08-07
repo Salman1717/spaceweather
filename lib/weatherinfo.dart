@@ -25,6 +25,48 @@ class WeatherInfo extends StatelessWidget {
               fontSize: 35,
               color: Colors.white,
             ),),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    onChanged: (value) {
+                      setState(() {
+                        _city = value;
+                      });
+                    },
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.2),
+                      labelText: 'Enter a city name',
+                      labelStyle: const TextStyle(color: Colors.white),
+                      contentPadding:
+                      const EdgeInsets.symmetric(vertical: 25, horizontal: 40),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: _refreshWeather,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white.withOpacity(0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  child: Image.asset(
+                    'assets/search.png',
+                    width: 35,
+                    height: 35,
+                  ),
+                ),
+              ],
+            ),
 
             const SizedBox(height: 30 ),
 
