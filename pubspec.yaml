@@ -79,6 +79,8 @@ flutter:
     - assets/Saturn.png
     - assets/Sun.png
     - assets/right.png
+    - assets/navigate.png
+    - assets/sidebar.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

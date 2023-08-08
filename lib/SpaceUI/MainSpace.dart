@@ -29,17 +29,37 @@ class MainSpace extends StatelessWidget {
               ),
             ),
             Positioned.fill(
-              top: 80, // Adjust the top offset as needed
+              top: 60, // Adjust the top offset as needed
               child: Column(
                 children: [
+                  Row(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child:
+                        Padding(
+                            padding: EdgeInsets.all(8), //apply padding to all four sides
+                            child: Image.asset('assets/sidebar.png',height: 30,width: 20,)),
+                      ),
+                      Spacer(),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child:
+                        Padding(
+                            padding: EdgeInsets.all(8), //apply padding to all four sides
+                            child: Image.asset('assets/navigate.png',height: 30,width: 20,)),
+                      ),
+                    ],
+                  ),
+
                const  SizedBox(
-                height: 10,
+                height: 5,
               ),
                const  Align(
                   alignment: Alignment.centerLeft,
                   child:
                   Padding(
-                    padding: EdgeInsets.all(15), //apply padding to all four sides
+                    padding: EdgeInsets.all(10), //apply padding to all four sides
                     child: Text(
                       'Welcome',
                       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold,color: Colors.white ),
@@ -49,7 +69,7 @@ class MainSpace extends StatelessWidget {
                   Text(""),
                   HorizontalCardScroll(),
                 Text(""),
-                  Text(""),
+
                   Text(""),
                   const Align(
                     alignment: Alignment.centerLeft,
@@ -164,7 +184,6 @@ class HorizontalCardScroll extends StatelessWidget {
     );
   }
 }
-
 
 
 class SpaceFacts extends StatelessWidget {
