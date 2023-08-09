@@ -21,7 +21,7 @@ class SearchBart   extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 18),
             child: Container(
-              width: 323,
+              width: 275,
               height: 43,
               child: Expanded(
                 child: TextField(
