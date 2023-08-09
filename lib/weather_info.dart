@@ -22,6 +22,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
   String _currentDate = '';
   String _currentTime = '';
   String _uvIndex ='';
+  String _visible = "";
 
   @override
   void initState() {
@@ -37,7 +38,8 @@ class _WeatherInfoState extends State<WeatherInfo> {
     try {
       final weatherData = await _api.fetchWeatherData(_city);
       final int _timezoneOffset = weatherData['timezone'];
-
+      final visibility = weatherData['visibility'];
+      final cvisible = visibility / 1000;
       final timestamp = weatherData['dt'];
       final utcDateTime = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000, isUtc: true);
       final localDateTime = utcDateTime.add(Duration(seconds: _timezoneOffset));
@@ -54,6 +56,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
         _uvIndex = weatherData['hourly.uvi'].toString();
         _currentTime = formattedTime;
         _currentDate = formattedDate;
+        _visible = cvisible.toString();
       });
     } catch (e) {
       _showErrorDialog('Error fetching weather data: $e');
@@ -271,7 +274,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                             _currentTime,
                             style: const TextStyle(
                               fontSize: 30,
-                              color: Colors.orange,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -288,35 +291,24 @@ class _WeatherInfoState extends State<WeatherInfo> {
                           ),
                         ),
                         const Positioned(
-                          top: 26,
-                          left: 28,
+                          top: 19,
+                          left: 25,
                           child: Text(
-                            "UV Index",
+                            "Visibility",
                             style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 30,
                               color: Colors.white,
                             ),
                           ),
                         ),
-                         Positioned(
-                          top: 60,
-                          left: 63,
+                        Positioned(
+                          top: 78,
+                          left: 12,
                           child: Text(
-                            "$_uvIndex",
-                            style: TextStyle(
-                              fontSize: 40,
-                              color: Colors.green,
-                            ),
-                          ),
-                        ),
-                        const Positioned(
-                          top: 107,
-                          right: 38,
-                          child: Text(
-                            "Good    ",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.green,
+                            '$_visible Km',
+                            style: const TextStyle(
+                              fontSize: 30,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -325,14 +317,6 @@ class _WeatherInfoState extends State<WeatherInfo> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  "Explore SolarSystem :",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.white,
-                  ),
-                ),
                 const SizedBox(height: 20),
 
               ],
