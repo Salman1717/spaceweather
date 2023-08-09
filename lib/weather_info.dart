@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'weather_api.dart';
+import 'Api/weather_api.dart';
 import 'package:intl/intl.dart';
-import'./search_bar.dart';
+import'UI/search_bar.dart';
 
 class WeatherInfo extends StatefulWidget {
   const WeatherInfo({super.key});
@@ -334,6 +334,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
                   ),
                 ),
                 const SizedBox(height: 20),
+
               ],
             ),
           ),
