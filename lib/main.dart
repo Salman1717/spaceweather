@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:spacewether/HomeScreen.dart';
 
 import './weather_info.dart';
+
+import 'SolarAnime.dart';
+import 'SpaceUI/MainSpace.dart';
+import 'SunWidget.dart';
 
 
 const Color g1 = Color(0xFF000000);
@@ -25,7 +30,7 @@ class MyApp extends StatelessWidget {
 
           body:
               Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -33,7 +38,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
                 child:
-                  WeatherInfo(),
+                MainSpace(),
 
               ),
       ),

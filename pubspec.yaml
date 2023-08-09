@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.17.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -67,6 +68,20 @@ flutter:
   assets:
     - assets/suncloud.png
     - assets/Earth.png
+    - assets/moon.jpg
+    - assets/solar-system.png
+    - assets/search.png
+    - assets/Bg.jpg
+    - assets/bg.png
+    - assets/Jupiter.png
+    - assets/Mercury.png
+    - assets/Moon.png
+    - assets/Saturn.png
+    - assets/Sun.png
+    - assets/right.png
+    - assets/navigate.png
+    - assets/sidebar.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
