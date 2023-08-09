@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SearchBart extends StatelessWidget {
+class SearchBart   extends StatelessWidget {
   final String city;
   final Function(String) onCityChanged;
   final VoidCallback onRefreshWeather;
