@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Api/weather_api.dart';
 import 'package:intl/intl.dart';
 import'UI/search_bar.dart';
+import 'components/DataInfoRow.dart';
 
 class WeatherInfo extends StatefulWidget {
   const WeatherInfo({super.key});
@@ -13,7 +14,6 @@ class WeatherInfo extends StatefulWidget {
 class _WeatherInfoState extends State<WeatherInfo> {
   WeatherApi _api = WeatherApi();
   String _city = 'Ratnagiri';
-
   String _temperature = '';
   String _humidity = '';
   String _day = '';
@@ -21,8 +21,11 @@ class _WeatherInfoState extends State<WeatherInfo> {
   String _weatherCondition = '';
   String _currentDate = '';
   String _currentTime = '';
-  String _uvIndex ='';
-  String _visible = "";
+  String _tempmin ='';
+  String _tempmax ='';
+  String _visible = '';
+  String _pressure ='';
+  String _windSpeed ='';
 
   @override
   void initState() {
@@ -38,12 +41,11 @@ class _WeatherInfoState extends State<WeatherInfo> {
     try {
       final weatherData = await _api.fetchWeatherData(_city);
       final int _timezoneOffset = weatherData['timezone'];
-      final visibility = weatherData['visibility'];
-      final cvisible = visibility / 1000;
+      final visibility  = weatherData['visibility'];
+      final cvisibile =  visibility / 1000 ;
       final timestamp = weatherData['dt'];
       final utcDateTime = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000, isUtc: true);
       final localDateTime = utcDateTime.add(Duration(seconds: _timezoneOffset));
-
       final formattedDate = DateFormat.yMMMMd().format(localDateTime);
       final formattedTime = DateFormat.jm().format(localDateTime);
 
@@ -53,10 +55,15 @@ class _WeatherInfoState extends State<WeatherInfo> {
         _weatherCondition = weatherData['weather'][0]['description'];
         _day = _getDayOfWeek(localDateTime.weekday);
         _country = weatherData['sys']['country'];
-        _uvIndex = weatherData['hourly.uvi'].toString();
+        _tempmin = (weatherData['main']['temp_min'] - 273.15).toStringAsFixed(1);
+        _tempmax = (weatherData['main']['temp_max'] - 273.15).toStringAsFixed(1);
         _currentTime = formattedTime;
         _currentDate = formattedDate;
-        _visible = cvisible.toString();
+        _visible = cvisibile.toString() ;
+        _pressure = weatherData['main']['pressure'].toString();
+        final windSpeed = weatherData['wind']['speed'];
+        _windSpeed = windSpeed.toString();
+
       });
     } catch (e) {
       _showErrorDialog('Error fetching weather data: $e');
@@ -156,12 +163,12 @@ class _WeatherInfoState extends State<WeatherInfo> {
                 Stack(
                   children: [
                     Container(
-                      width: 390,
+                      width: 380,
                       height: 150,
                       padding: const EdgeInsets.all(20.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Colors.white.withOpacity(0.2),
+                        color: Colors.white.withOpacity(0.1),
                       ),
                     ),
                     Positioned(
@@ -243,78 +250,25 @@ class _WeatherInfoState extends State<WeatherInfo> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 165,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.white.withOpacity(0.2),
-                          ),
-                        ),
-                        const Positioned(
-                          top: 19,
-                          left: 33,
-                          child: Text(
-                            "Time",
-                            style: TextStyle(
-                              fontSize: 35,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 78,
-                          left: 12,
-                          child: Text(
-                            _currentTime,
-                            style: const TextStyle(
-                              fontSize: 30,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          width: 165,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.white.withOpacity(0.2),
-                          ),
-                        ),
-                        const Positioned(
-                          top: 19,
-                          left: 25,
-                          child: Text(
-                            "Visibility",
-                            style: TextStyle(
-                              fontSize: 30,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 78,
-                          left: 12,
-                          child: Text(
-                            '$_visible Km',
-                            style: const TextStyle(
-                              fontSize: 30,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                DataInfoRow(
+                  label1: "Time",
+                  data1: _currentTime,
+                  label2: "Visibility",
+                  data2: "$_visible KM",
+                ),
+                const SizedBox(height: 20,),
+                DataInfoRow(
+                  label1: "MinTemp",
+                  data1: "$_tempmin℃",
+                  label2: "MaxTemp",
+                  data2: "$_tempmax℃ ",
+                ),
+                const SizedBox(height: 20,),
+                DataInfoRow(
+                  label1: "Pressure",
+                  data1: "$_pressure hPa",
+                  label2: "Wind",
+                  data2: "$_windSpeed m/s",
                 ),
                 const SizedBox(height: 20),
                 const SizedBox(height: 20),
@@ -327,3 +281,4 @@ class _WeatherInfoState extends State<WeatherInfo> {
     );
   }
 }
+
