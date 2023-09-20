@@ -9,6 +9,8 @@ const Color g6 = Color(0xFF220364);
 
 
 class MainSpace extends StatelessWidget {
+  const MainSpace({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

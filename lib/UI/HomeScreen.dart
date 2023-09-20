@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:spacewether/UI/MainSpace.dart';
+import 'package:spacewether/UI/weather_info.dart';
 import 'package:spacewether/components/ImgCard.dart';
+
+import '../HomeScreen.dart';
 
 class HomeScreeen extends StatelessWidget {
   @override
@@ -46,11 +50,11 @@ class HomeScreeen extends StatelessWidget {
                 ),
 
                 SizedBox(height: 20),
-                ImgCard(img: 'weather.avif', title: 'WEATHER.'),
+                ImgCard(img: 'weather.avif', title: 'WEATHER.',destination: WeatherInfo(),),
                 SizedBox(height:30),
-                ImgCard(img: 'Solarsys.avif', title: 'SOLAR SYSTEM.'),
+                ImgCard(img: 'Solarsys.avif', title: 'SOLAR SYSTEM.',destination: MainSpace(),),
                 SizedBox(height:30),
-                ImgCard(img: 'moonphs.avif', title: 'MOON PHASES.')
+                ImgCard(img: 'moonphs.avif', title: 'MOON PHASES.', destination: HomeScreen(),)
               ],
             )
         )

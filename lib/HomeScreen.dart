@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("Chandler"),
-        ImgCard(img: 'Solarsys.avif', title: 'kahdaksn')
+
 
         // RotationTransitionExampleApp()
       ],

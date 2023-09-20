@@ -4,6 +4,10 @@ import 'package:intl/intl.dart';
 import'../components/search_bar.dart';
 import '../components/DataInfoRow.dart';
 
+const Color g1 = Color(0xff011743);
+const Color g2 = Color(0xFF340DA7);
+const Color g3 = Color(0xFF4F186E);
+
 class WeatherInfo extends StatefulWidget {
   const WeatherInfo({super.key});
 
@@ -133,151 +137,158 @@ class _WeatherInfoState extends State<WeatherInfo> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return Container( // Wrap your widget with a Container
+        decoration: const BoxDecoration(
+        gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [g3, g2, g1],
+    ),
+    ),
+    child:SafeArea(
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              "Weather",
+              style: TextStyle(
+                fontSize: 35,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            SearchBart(
+              city: _city,
+              onCityChanged: (newCity) {
+                setState(() {
+                  _city = newCity;
+                });
+              },
+              onRefreshWeather: _refreshWeather,
+            ),
+            const SizedBox(height: 30),
+            Stack(
               children: [
-                const Text(
-                  "Weather",
-                  style: TextStyle(
-                    fontSize: 35,
-                    color: Colors.white,
+                Container(
+                  width: 380,
+                  height: 150,
+                  padding: const EdgeInsets.all(20.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white.withOpacity(0.1),
                   ),
                 ),
-                const SizedBox(height: 20),
-
-                SearchBart(
-                  city: _city,
-                  onCityChanged: (newCity) {
-                    setState(() {
-                      _city = newCity;
-                    });
-                  },
-                  onRefreshWeather: _refreshWeather,
+                Positioned(
+                  top: 15,
+                  left: 15,
+                  child: Image.asset(
+                    'assets/suncloud.png',
+                    width: 68,
+                    height: 64,
+                  ),
                 ),
-                const SizedBox(height: 30),
-                Stack(
-                  children: [
-                    Container(
-                      width: 380,
-                      height: 150,
-                      padding: const EdgeInsets.all(20.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.white.withOpacity(0.1),
-                      ),
+                Positioned(
+                  top: 82,
+                  left: 15,
+                  child: Text(
+                    _weatherCondition,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
                     ),
-                    Positioned(
-                      top: 15,
-                      left: 15,
-                      child: Image.asset(
-                        'assets/suncloud.png',
-                        width: 68,
-                        height: 64,
-                      ),
-                    ),
-                    Positioned(
-                      top: 82,
-                      left: 15,
-                      child: Text(
-                        _weatherCondition,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      top: 105,
-                      left: 15,
-                      child: Text(
-                        "Precipitation: 100%",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 126,
-                      left: 15,
-                      child: Text(
-                        "Humidity: $_humidity",
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 29,
-                      right: 8,
-                      child: Text(
-                        "$_temperature℃ ",
-                        style: const TextStyle(
-                          fontSize: 40,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 95,
-                      right: 8,
-                      child: Text(
-                        "$_currentDate. $_day",
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 127,
-                      right: 8,
-                      child: Text(
-                        "$_city, $_country",
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-                const SizedBox(height: 20),
-                DataInfoRow(
-                  label1: "Time",
-                  data1: _currentTime,
-                  label2: "Visibility",
-                  data2: "$_visible KM",
+                const Positioned(
+                  top: 105,
+                  left: 15,
+                  child: Text(
+                    "Precipitation: 100%",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 20,),
-                DataInfoRow(
-                  label1: "MinTemp",
-                  data1: "$_tempmin℃",
-                  label2: "MaxTemp",
-                  data2: "$_tempmax℃ ",
+                Positioned(
+                  top: 126,
+                  left: 15,
+                  child: Text(
+                    "Humidity: $_humidity",
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 20,),
-                DataInfoRow(
-                  label1: "Pressure",
-                  data1: "$_pressure hPa",
-                  label2: "Wind",
-                  data2: "$_windSpeed m/s",
+                Positioned(
+                  top: 29,
+                  right: 8,
+                  child: Text(
+                    "$_temperature℃ ",
+                    style: const TextStyle(
+                      fontSize: 40,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 20),
-                const SizedBox(height: 20),
-
+                Positioned(
+                  top: 95,
+                  right: 8,
+                  child: Text(
+                    "$_currentDate. $_day",
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: 127,
+                  right: 8,
+                  child: Text(
+                    "$_city, $_country",
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ],
             ),
-          ),
+            const SizedBox(height: 20),
+            DataInfoRow(
+              label1: "Time",
+              data1: _currentTime,
+              label2: "Visibility",
+              data2: "$_visible KM",
+            ),
+            const SizedBox(height: 20,),
+            DataInfoRow(
+              label1: "MinTemp",
+              data1: "$_tempmin℃",
+              label2: "MaxTemp",
+              data2: "$_tempmax℃ ",
+            ),
+            const SizedBox(height: 20,),
+            DataInfoRow(
+              label1: "Pressure",
+              data1: "$_pressure hPa",
+              label2: "Wind",
+              data2: "$_windSpeed m/s",
+            ),
+            const SizedBox(height: 20),
+            const SizedBox(height: 20),
+
+          ],
+        ),
         ),
       ),
+    ),
     );
   }
 }
