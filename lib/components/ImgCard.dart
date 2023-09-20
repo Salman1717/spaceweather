@@ -37,7 +37,8 @@ class ImgCard extends StatelessWidget {
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 25,
-                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Oxygen',
+                  fontWeight: FontWeight.normal,
                 )
             ))
       ],

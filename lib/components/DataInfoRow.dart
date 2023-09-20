@@ -29,10 +29,12 @@ class DataInfoRow extends StatelessWidget {
           ),
           Positioned(
             top: 19,
-            left: 30,
+            left: 10,
             child: Text(
               label1,
               style: const TextStyle(
+                fontFamily: 'Oxygen',
+                fontWeight: FontWeight.w500,
                 fontSize: 30,
                 color: Color(0xFFA3D1F2),
               ),
@@ -40,10 +42,12 @@ class DataInfoRow extends StatelessWidget {
           ),
           Positioned(
             top: 78,
-            left: 25,
+            left: 10,
             child: Text(
               data1,
               style: const TextStyle(
+                fontFamily: 'Oxygen',
+                fontWeight: FontWeight.w300,
                 fontSize: 30,
                 color: Color(0xFFD4F1F4),
               ),
@@ -63,10 +67,12 @@ class DataInfoRow extends StatelessWidget {
             ),
             Positioned(
               top: 19,
-              left: 25,
+              left: 10,
               child: Text(
                 label2,
                 style: const TextStyle(
+                  fontFamily: 'Oxygen',
+                  fontWeight: FontWeight.w500,
                   fontSize: 30,
                   color: Color(0xFFA3D1F2),
                 ),
@@ -74,10 +80,12 @@ class DataInfoRow extends StatelessWidget {
             ),
             Positioned(
               top: 78,
-              left: 12,
+              left: 10,
               child: Text(
                 data2,
                 style: const TextStyle(
+                  fontFamily: 'Oxygen',
+                  fontWeight: FontWeight.w300,
                   fontSize: 30,
                   color: Color(0xFFD4F1F4),
                 ),

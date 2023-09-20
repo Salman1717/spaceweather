@@ -16,7 +16,7 @@ class WeatherInfo extends StatefulWidget {
 }
 
 class _WeatherInfoState extends State<WeatherInfo> {
-  WeatherApi _api = WeatherApi();
+  final WeatherApi _api = WeatherApi();
   String _city = 'Ratnagiri';
   String _temperature = '';
   String _humidity = '';
@@ -155,6 +155,8 @@ class _WeatherInfoState extends State<WeatherInfo> {
             const Text(
               "Weather",
               style: TextStyle(
+                fontFamily: 'Oxygen',
+                fontWeight: FontWeight.w400,
                 fontSize: 35,
                 color: Colors.white,
               ),
@@ -197,6 +199,8 @@ class _WeatherInfoState extends State<WeatherInfo> {
                   child: Text(
                     _weatherCondition,
                     style: const TextStyle(
+                      fontFamily: 'Oxygen',
+                      fontWeight: FontWeight.normal,
                       fontSize: 16,
                       color: Colors.white,
                     ),

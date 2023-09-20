@@ -6,6 +6,8 @@ import 'package:spacewether/components/ImgCard.dart';
 import '../HomeScreen.dart';
 
 class HomeScreeen extends StatelessWidget {
+  const HomeScreeen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
@@ -18,32 +20,36 @@ class HomeScreeen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 35,
                       color: Color(0xFFA3D1F2),
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Oxygen',
+                      fontWeight: FontWeight.w500,
+
                     )
                 ),
             SizedBox(height: 28),
             Align(
               alignment: Alignment.centerLeft,
-            child:Padding(padding: const EdgeInsets.only(left: 20),
+            child:Padding(padding: EdgeInsets.only(left: 20),
                 child: Text(
               "Explore the UNKNOWN",
             style: TextStyle(
               color: Color(0xFFD4F1F4),
               fontSize: 20,
-              fontWeight: FontWeight.w700,
+              fontFamily: 'Oxygen',
+              fontWeight: FontWeight.normal,
             )
             )
             )
              ),
                 Align(
                     alignment: Alignment.centerLeft,
-                    child:Padding(padding: const EdgeInsets.only(left: 20),
+                    child:Padding(padding: EdgeInsets.only(left: 20),
                         child: Text(
                             "START HERE...",
                             style: TextStyle(
+                              fontFamily: 'Oxygen',
                               color: Color(0xFFD4F1F4),
                               fontSize: 20,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.normal,
                             )
                         )
                     )
@@ -54,7 +60,8 @@ class HomeScreeen extends StatelessWidget {
                 SizedBox(height:30),
                 ImgCard(img: 'Solarsys.avif', title: 'SOLAR SYSTEM.',destination: MainSpace(),),
                 SizedBox(height:30),
-                ImgCard(img: 'moonphs.avif', title: 'MOON PHASES.', destination: HomeScreen(),)
+                ImgCard(img: 'moonphs.avif', title: 'MOON PHASES.', destination: HomeScreen(),),
+                SizedBox(height:70),
               ],
             )
         )
