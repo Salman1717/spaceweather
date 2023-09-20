@@ -81,6 +81,10 @@ flutter:
     - assets/right.png
     - assets/navigate.png
     - assets/sidebar.png
+    - assets/home/moonphs.avif
+    - assets/home/Solarsys.avif
+    - assets/home/weather.avif
+    - assets/home/weather1.avif
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

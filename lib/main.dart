@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:spacewether/HomeScreen.dart';
 
-import './weather_info.dart';
+import 'UI/HomeScreen.dart';
+import 'UI/weather_info.dart';
 
 import 'SolarAnime.dart';
-import 'SpaceUI/MainSpace.dart';
+import 'UI/MainSpace.dart';
 import 'SunWidget.dart';
 
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
                 child:
-                WeatherInfo(),
+                HomeScreeen(),
 
               ),
       ),

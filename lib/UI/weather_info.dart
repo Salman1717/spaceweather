@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Api/weather_api.dart';
+import '../Api/weather_api.dart';
 import 'package:intl/intl.dart';
-import'UI/search_bar.dart';
-import 'components/DataInfoRow.dart';
+import'../components/search_bar.dart';
+import '../components/DataInfoRow.dart';
 
 class WeatherInfo extends StatefulWidget {
   const WeatherInfo({super.key});
