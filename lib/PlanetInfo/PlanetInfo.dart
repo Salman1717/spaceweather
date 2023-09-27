@@ -77,7 +77,7 @@ class _NestedTabBarState extends State<NestedTabBar>
           child: TabBar.secondary(
           controller: _tabController,
           indicatorColor: Colors.red,
-          labelColor: Colors.blue,
+          labelColor: Colors.white,
           tabs: const <Widget>[
             Tab(text: '360'),
             Tab(text: 'Information'),

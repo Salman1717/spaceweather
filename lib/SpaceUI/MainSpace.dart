@@ -61,7 +61,6 @@ class MainSpace extends StatelessWidget {
                       ),
                     ],
                   ),
-
                const  SizedBox(
                 height: 5,
               ),
@@ -75,11 +74,9 @@ class MainSpace extends StatelessWidget {
                       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold,color: Colors.white ),
                     ),),
                   ),
-
                   Text(""),
-                  HorizontalCardScroll(destination: TabBarExample(PakkaFinal: MainTabSpaceEarth(),),),
+                  HorizontalCardScroll(),
                 Text(""),
-
                   Text(""),
                   const Align(
                     alignment: Alignment.centerLeft,
@@ -132,26 +129,12 @@ class HorizontalCardScroll extends StatelessWidget {
       'content': 'Content for Card 2',
       'imageURL': 'assets/Jupiter.png'
     },
-
-
     // Add more card data as needed
   ];
-  final List<Map<Widget, dynamic>> cardDest = [
-
-    {
-      MainTabSpaceEarth(): 'Earth',
-
-    },
 
 
-    // Add more card data as needed
-  ];
-  final Widget destination;
-   HorizontalCardScroll({super.key,
-    required this.destination});
   @override
   Widget build(BuildContext context) {
-
     return Container(
       height: 250, // Adjust the height as needed
       child: ListView.builder(
@@ -165,10 +148,7 @@ class HorizontalCardScroll extends StatelessWidget {
             color: g6,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12), // Rounded corners
-              // side: BorderSide(
-              //   color: Colors.white, // Border color
-              //   width: 2, // Border width
-              // ),
+
             ),
             child: Container(
               width: 200, // Adjust the width of the card as needed
@@ -192,9 +172,9 @@ class HorizontalCardScroll extends StatelessWidget {
                     children: [
                       Text(
                         cardData[index]['title'],
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+                        style:const  TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
                       ),
-                      Spacer(),
+                     const  Spacer(),
                       InkWell(
                         onTap: () {
                           Navigator.push(
@@ -206,10 +186,8 @@ class HorizontalCardScroll extends StatelessWidget {
                         },
                     child:  Image.asset('assets/right.png',height: 30,width: 30,)
                       )
-
                     ],
                   ),
-
                   SizedBox(height: 8),
                   // Text(cardData[index]['content']),
 
@@ -217,19 +195,11 @@ class HorizontalCardScroll extends StatelessWidget {
               ),
             ),
           ),
-
-
-
-
           ],
-
           );
-
-
         },
       ),
     );
-
   }
 }
 
@@ -247,8 +217,6 @@ Widget getPlanetPage(String planetTitle) {
       return const TabBarExample(PakkaFinal: MainTabSpaceSun());
     case 'Jupiter':
       return TabBarExample(PakkaFinal: MainTabSpaceJupiter());
-    case 'Moon':
-      return MainTabSpaceMoon();
   // Add cases for other planets here
     default:
       return Container(); // Return an empty container for unsupported planets
