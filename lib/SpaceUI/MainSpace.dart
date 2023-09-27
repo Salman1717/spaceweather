@@ -236,17 +236,17 @@ class HorizontalCardScroll extends StatelessWidget {
 Widget getPlanetPage(String planetTitle) {
   switch (planetTitle) {
     case 'Earth':
-      return MainTabSpaceEarth();
+      return const TabBarExample(PakkaFinal: MainTabSpaceEarth());
     case 'Moon':
-      return MainTabSpaceMoon();
+      return const TabBarExample(PakkaFinal: MainTabSpaceMoon());
     case 'Mercury':
-      return MainTabSpaceMercury();
+      return  TabBarExample(PakkaFinal: MainTabSpaceMercury());;
     case 'Saturn':
-      return MainTabSpaceSaturn();
+      return TabBarExample(PakkaFinal: MainTabSpaceSaturn());
     case 'Sun':
-      return MainTabSpaceSun();
+      return const TabBarExample(PakkaFinal: MainTabSpaceSun());
     case 'Jupiter':
-      return MainTabSpaceJupiter();
+      return TabBarExample(PakkaFinal: MainTabSpaceJupiter());
     case 'Moon':
       return MainTabSpaceMoon();
   // Add cases for other planets here

@@ -72,12 +72,17 @@ class _NestedTabBarState extends State<NestedTabBar>
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        TabBar.secondary(
+        Container(
+          color: Colors.black, // Change the background color of the TabBar
+          child: TabBar.secondary(
           controller: _tabController,
+          indicatorColor: Colors.red,
+          labelColor: Colors.blue,
           tabs: const <Widget>[
             Tab(text: '360'),
             Tab(text: 'Information'),
           ],
+          ),
         ),
         Expanded(
           child: TabBarView(
@@ -88,7 +93,7 @@ class _NestedTabBarState extends State<NestedTabBar>
                 child: Center(child:  Text('${widget.outerTab}: Specifications tab')),
               ),
               Card(
-                margin: const EdgeInsets.all(6.0),
+                margin: const EdgeInsets.all(0),
                 child: Center(
                     child: destBar),
               ),
