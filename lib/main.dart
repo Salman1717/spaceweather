@@ -3,6 +3,8 @@ import 'package:spacewether/HomeScreen.dart';
 
 import './weather_info.dart';
 
+import 'PlanetInfo/PlanetInfo.dart';
+import 'PlanetInfo/Planets/EarthPage.dart';
 import 'SolarAnime.dart';
 import 'SpaceUI/MainSpace.dart';
 import 'SunWidget.dart';
@@ -14,6 +16,8 @@ const Color g3 = Color(0xFF2C166C);
 const Color g4 = Color(0xFF3F10A5);
 const Color g5 = Color(0xFF8D73C6);
 const Color g6 = Color(0xFF220364);
+const Color gold = Color(0xFFFFD700);
+
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
                 child:
-                WeatherInfo(),
+                MainSpace(),
 
               ),
       ),

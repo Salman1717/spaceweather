@@ -81,6 +81,18 @@ flutter:
     - assets/right.png
     - assets/navigate.png
     - assets/sidebar.png
+    - assets/PlanetImages/earth.jpg
+    - assets/PlanetImages/jupiter.jpg
+    - assets/PlanetImages/Mars.jpg
+    - assets/PlanetImages/Mercury.png
+    - assets/PlanetImages/neptune.jpg
+    - assets/PlanetImages/saturn.jpg
+    - assets/PlanetImages/uranus.jpg
+    - assets/PlanetImages/venus.jpg
+    - assets/PlanetImages/plato.png
+    - assets/PlanetImages/sun.jpg
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
