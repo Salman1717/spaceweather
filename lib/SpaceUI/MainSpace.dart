@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../PlanetInfo/PlanetInfo.dart';
+import '../PlanetInfo/Planets/EarthPage.dart';
+import '../PlanetInfo/Planets/Jupiter.dart';
+import '../PlanetInfo/Planets/MercuryPage.dart';
+import '../PlanetInfo/Planets/MoonPage.dart';
+import '../PlanetInfo/Planets/Saturn.dart';
+import '../PlanetInfo/Planets/Sun.dart';
+import '../PlanetInfo/Planets/Venus.dart';
+import '../weather_info.dart';
+
 const Color g1 = Color(0xFF000000);
 const Color g2 = Color(0xFF0F0F29);
 const Color g3 = Color(0xFF2C166C);
@@ -51,7 +61,6 @@ class MainSpace extends StatelessWidget {
                       ),
                     ],
                   ),
-
                const  SizedBox(
                 height: 5,
               ),
@@ -65,11 +74,9 @@ class MainSpace extends StatelessWidget {
                       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold,color: Colors.white ),
                     ),),
                   ),
-
                   Text(""),
                   HorizontalCardScroll(),
                 Text(""),
-
                   Text(""),
                   const Align(
                     alignment: Alignment.centerLeft,
@@ -125,6 +132,7 @@ class HorizontalCardScroll extends StatelessWidget {
     // Add more card data as needed
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -133,17 +141,15 @@ class HorizontalCardScroll extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: cardData.length,
         itemBuilder: (BuildContext context, int index) {
-          return Card(
+          return Column(children: [
+            Card(
             elevation: 4,
             margin: EdgeInsets.all(10),
             color: g6,
             shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12), // Rounded corners
-            // side: BorderSide(
-            //   color: Colors.white, // Border color
-            //   width: 2, // Border width
-            // ),
-          ),
+              borderRadius: BorderRadius.circular(12), // Rounded corners
+
+            ),
             child: Container(
               width: 200, // Adjust the width of the card as needed
               padding: EdgeInsets.all(10),
@@ -166,18 +172,30 @@ class HorizontalCardScroll extends StatelessWidget {
                     children: [
                       Text(
                         cardData[index]['title'],
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+                        style:const  TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
                       ),
-                      Spacer(),
-                      Image.asset('assets/right.png',height: 30,width: 30,)
-
+                     const  Spacer(),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => getPlanetPage(cardData[index]['title']),
+                            ),
+                          );
+                        },
+                    child:  Image.asset('assets/right.png',height: 30,width: 30,)
+                      )
                     ],
                   ),
                   SizedBox(height: 8),
                   // Text(cardData[index]['content']),
+
                 ],
               ),
             ),
+          ),
+          ],
           );
         },
       ),
@@ -185,7 +203,25 @@ class HorizontalCardScroll extends StatelessWidget {
   }
 }
 
-
+Widget getPlanetPage(String planetTitle) {
+  switch (planetTitle) {
+    case 'Earth':
+      return const TabBarExample(PakkaFinal: MainTabSpaceEarth());
+    case 'Moon':
+      return const TabBarExample(PakkaFinal: MainTabSpaceMoon());
+    case 'Mercury':
+      return  TabBarExample(PakkaFinal: MainTabSpaceMercury());;
+    case 'Saturn':
+      return TabBarExample(PakkaFinal: MainTabSpaceSaturn());
+    case 'Sun':
+      return const TabBarExample(PakkaFinal: MainTabSpaceSun());
+    case 'Jupiter':
+      return TabBarExample(PakkaFinal: MainTabSpaceJupiter());
+  // Add cases for other planets here
+    default:
+      return Container(); // Return an empty container for unsupported planets
+  }
+}
 class SpaceFacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
