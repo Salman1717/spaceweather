@@ -7,6 +7,7 @@ import 'PlanetInfo/PlanetInfo.dart';
 import 'PlanetInfo/Planets/EarthPage.dart';
 import 'SolarAnime.dart';
 import 'SpaceUI/MainSpace.dart';
+import 'SpaceUI/PlanetsInfo.dart';
 import 'SunWidget.dart';
 
 
@@ -43,7 +44,11 @@ class MyApp extends StatelessWidget {
                 ),
               ),
                 child:
+<<<<<<< HEAD
                 WeatherInfo(),
+=======
+                TabBarExample(),
+>>>>>>> 65ea8331398b27fc57ed5e499f4c6b416503f721
 
               ),
       ),
