@@ -43,12 +43,13 @@ class SearchBart   extends StatelessWidget {
               ),
             ),
           ),
+          Spacer(),
           ElevatedButton(
             onPressed: onRefreshWeather,
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white.withOpacity(0),
+              backgroundColor: Colors.white.withOpacity(0.1),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
             child: Image.asset(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spacewether/components/ImgCard.dart';
 
 
 import 'SolarAnime.dart';
@@ -22,10 +23,8 @@ class HomeScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("Chandler"),
-        
-        CardExample(),
-        // SolarSystemFull(),
-        SolarSystemAnimation(),
+
+
         // RotationTransitionExampleApp()
       ],
      ),)
