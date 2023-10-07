@@ -30,6 +30,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
   String _visible = '';
   String _pressure ='';
   String _windSpeed ='';
+  String _wicon='';
 
   @override
   void initState() {
@@ -56,6 +57,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
       setState(() {
         _temperature = (weatherData['main']['temp'] - 273.15).toStringAsFixed(1);
         _humidity = weatherData['main']['humidity'].toString();
+        _wicon =weatherData['weather'][0]['icon'];
         _weatherCondition = weatherData['weather'][0]['description'];
         _day = _getDayOfWeek(localDateTime.weekday);
         _country = weatherData['sys']['country'];
@@ -137,7 +139,7 @@ class _WeatherInfoState extends State<WeatherInfo> {
 
   @override
   Widget build(BuildContext context) {
-    return Container( // Wrap your widget with a Container
+    return Container(
         decoration: const BoxDecoration(
         gradient: LinearGradient(
         begin: Alignment.topLeft,
@@ -187,8 +189,9 @@ class _WeatherInfoState extends State<WeatherInfo> {
                 Positioned(
                   top: 15,
                   left: 15,
-                  child: Image.asset(
-                    'assets/suncloud.png',
+                  child:
+                  Image.network(
+                    'https://openweathermap.org/img/wn/$_wicon.png',
                     width: 68,
                     height: 64,
                   ),

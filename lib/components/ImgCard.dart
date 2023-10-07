@@ -24,10 +24,10 @@ class ImgCard extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(15),
-          child:Image.asset("assets/home/$img",
+          child:Image.asset("assets/$img",
               width: 350,
               height: 160,
-              fit: BoxFit.fill),
+              fit: BoxFit.fitWidth),
         ),
         Positioned(
             left:10,

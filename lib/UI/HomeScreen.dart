@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:spacewether/UI/ARView.dart';
 import 'package:spacewether/UI/MainSpace.dart';
+
 import 'package:spacewether/UI/weather_info.dart';
 import 'package:spacewether/components/ImgCard.dart';
 
-import '../HomeScreen.dart';
+
+import '../MoonPhase/moonP.dart';
 
 class HomeScreeen extends StatelessWidget {
   const HomeScreeen({super.key});
@@ -13,7 +16,8 @@ class HomeScreeen extends StatelessWidget {
     return const SafeArea(
         child: Scaffold(
             backgroundColor: Colors.transparent,
-            body: Center(child:Column(
+            body: SingleChildScrollView(
+                child:Center(child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("SPACE WEATHER",
@@ -56,15 +60,17 @@ class HomeScreeen extends StatelessWidget {
                 ),
 
                 SizedBox(height: 20),
-                ImgCard(img: 'weather.avif', title: 'WEATHER.',destination: WeatherInfo(),),
+                ImgCard(img: 'home/weather1.avif', title: 'WEATHER.',destination: WeatherInfo(),),
                 SizedBox(height:30),
-                ImgCard(img: 'Solarsys.avif', title: 'SOLAR SYSTEM.',destination: MainSpace(),),
+                ImgCard(img: 'home/Solarsys.avif', title: 'SOLAR SYSTEM.',destination: MainSpace(),),
                 SizedBox(height:30),
-                ImgCard(img: 'moonphs.avif', title: 'MOON PHASES.', destination: HomeScreen(),),
+                ImgCard(img: 'home/moonphs.avif', title: 'MOON PHASES.', destination: MainSpace(),),
+                SizedBox(height:30),
+                ImgCard(img: 'home/arview2.avif', title: 'VIEW IN AR', destination: ARView()),
                 SizedBox(height:70),
               ],
             )
-        )
+        ))
         )
     );
   }

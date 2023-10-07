@@ -81,6 +81,20 @@ flutter:
     - assets/right.png
     - assets/navigate.png
     - assets/sidebar.png
+    - assets/home/moonphs.avif
+    - assets/home/Solarsys.avif
+    - assets/home/weather.avif
+    - assets/home/weather1.avif
+    - assets/home/arview2.avif
+    - assets/arview/Earth.avif
+    - assets/arview/Moon.avif
+    - assets/arview/Mercury.jpeg
+    - assets/arview/Mars.avif
+    - assets/arview/Venus.jpeg
+    - assets/arview/Jupiter.avif
+    - assets/arview/Saturn.avif
+    - assets/arview/Sun.jpg
+    - assets/arview/Earth1.avif
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -94,12 +108,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+fonts:
+     - family: Oxygen
+       fonts:
+         - asset: fonts/Oxygen-Bold.ttf
+         - asset: fonts/Oxygen-Light.ttf
+         - asset: fonts/Oxygen-Regular.ttf
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

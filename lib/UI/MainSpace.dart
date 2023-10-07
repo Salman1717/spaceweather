@@ -8,7 +8,6 @@ import '../PlanetInfo/Planets/MoonPage.dart';
 import '../PlanetInfo/Planets/Saturn.dart';
 import '../PlanetInfo/Planets/Sun.dart';
 import '../PlanetInfo/Planets/Venus.dart';
-import '../weather_info.dart';
 
 const Color g1 = Color(0xFF000000);
 const Color g2 = Color(0xFF0F0F29);
@@ -73,7 +72,7 @@ class MainSpace extends StatelessWidget {
                     padding: EdgeInsets.all(10), //apply padding to all four sides
                     child: Text(
                       'Welcome',
-                      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold,color: Colors.white ),
+                      style: TextStyle(fontSize: 35, fontFamily:'Proportional_tfb' ,color: Colors.white ),
                     ),),
                   ),
                   Text(""),
@@ -83,7 +82,7 @@ class MainSpace extends StatelessWidget {
                   const Align(
                     alignment: Alignment.centerLeft,
                     child:  Text("Space Facts",
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Colors.white ),
+                        style: TextStyle(fontSize: 25,fontFamily: 'Proportional_tfb',color: Colors.white ),
                     ),
                   ),
                   Text(""),
@@ -147,7 +146,7 @@ class HorizontalCardScroll extends StatelessWidget {
             Card(
             elevation: 4,
             margin: EdgeInsets.all(10),
-            color: g6,
+            color: g6.withOpacity(0.4),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12), // Rounded corners
 
@@ -229,7 +228,7 @@ class SpaceFacts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        color: g6,
+        color: g6.withOpacity(0.6),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
           // Rounded corners

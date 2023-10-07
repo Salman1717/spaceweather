@@ -4,17 +4,17 @@ class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<MyWidget> createState() => MoonPhases();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class MoonPhases extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Column(
                 children: [
-                            Text(
+                            const Text(
                     "Moon Phases",
                     style: TextStyle(
                         fontSize: 35,
