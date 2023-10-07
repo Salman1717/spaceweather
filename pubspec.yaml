@@ -81,20 +81,25 @@ flutter:
     - assets/right.png
     - assets/navigate.png
     - assets/sidebar.png
+<<<<<<<<< Temporary merge branch 1
     - assets/home/moonphs.avif
     - assets/home/Solarsys.avif
     - assets/home/weather.avif
     - assets/home/weather1.avif
-    - assets/home/arview2.avif
-    - assets/arview/Earth.avif
-    - assets/arview/Moon.avif
-    - assets/arview/Mercury.jpeg
-    - assets/arview/Mars.avif
-    - assets/arview/Venus.jpeg
-    - assets/arview/Jupiter.avif
-    - assets/arview/Saturn.avif
-    - assets/arview/Sun.jpg
-    - assets/arview/Earth1.avif
+=========
+    - assets/PlanetImages/earth.jpg
+    - assets/PlanetImages/jupiter.jpg
+    - assets/PlanetImages/Mars.jpg
+    - assets/PlanetImages/Mercury.png
+    - assets/PlanetImages/neptune.jpg
+    - assets/PlanetImages/saturn.jpg
+    - assets/PlanetImages/uranus.jpg
+    - assets/PlanetImages/venus.jpg
+    - assets/PlanetImages/plato.png
+    - assets/PlanetImages/sun.jpg
+
+
+>>>>>>>>> Temporary merge branch 2
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
