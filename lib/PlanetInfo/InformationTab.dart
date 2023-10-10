@@ -101,7 +101,7 @@ class PlanetTemperature extends StatelessWidget {
         width: 150,
         height: 80,
         child: Card(
-            color: Colors.black,
+            color: Colors.white54.withOpacity(0.2),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),
               // Rounded corners
@@ -113,11 +113,11 @@ class PlanetTemperature extends StatelessWidget {
                 children: <Widget>[
                  const  Text(
                     "Temperature",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),
                   ),
                   Text(
                     temp,
-                    style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Colors.white),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.white),
                   ),
                 ],
               ),
@@ -146,7 +146,7 @@ class PlanetStorm extends StatelessWidget {
         width: 150,
         height: 80,
         child: Card(
-            color: Colors.black,
+            color: Colors.white54.withOpacity(0.2),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),
               // Rounded corners
@@ -162,7 +162,7 @@ class PlanetStorm extends StatelessWidget {
                   ),
                   Text(
                     storm,
-                    style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Colors.white),
+                    style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
                   ),
                 ],
               ),

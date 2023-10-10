@@ -27,15 +27,17 @@ class MainTabSpaceSaturn extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      PlanetTemperature(temp:"145"),
+                      PlanetTemperature(temp:"-178°C"),
                       Spacer(),
-                      PlanetStorm(storm: "200km/hr",)
+                      PlanetStorm(storm: "840km/hr",)
                     ],
                   ),
-                  PlanetDayDuration(title: "Time Relativity",duration: "A day on Jupiter lasts only nine hours and 55 minutes"),
+                  PlanetDayDuration(title: "Time Relativity",duration: "One day on Saturn, "
+                      "is approximately 10 hours, 33 minutes, and 38 seconds in Earth time."),
                   PlanetDayDuration(title: "Distance from the earth",
-                    duration: "2000000 light years",),
-                  PlanetFacts(Facts: "Facts")
+                    duration: "0.00043 light years",),
+                  PlanetFacts(Facts: "Saturn's iconic rings are not solid structures but are composed of countless individual particles, "
+                      "ranging in size from tiny grains to large chunks, all orbiting the planet.")
 
                 ],
               ),

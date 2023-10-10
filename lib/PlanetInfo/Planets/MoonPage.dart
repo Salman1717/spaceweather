@@ -21,7 +21,7 @@ class MainTabSpaceMoon extends StatelessWidget {
                 ),
               ),
               child: Center(
-                child: Text("Explore"),
+                child: Text(""),
               ),
             ),
             Positioned.fill(
@@ -30,15 +30,18 @@ class MainTabSpaceMoon extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      PlanetTemperature(temp:"145"),
+                      PlanetTemperature(temp:"-130°C to 120°C"),
                       Spacer(),
-                      PlanetStorm(storm: "200km/hr",)
+                      PlanetStorm(storm: "∅",)
                     ],
                   ),
-                  PlanetDayDuration(title: "Time Relativity",duration: "A day on Jupiter lasts only nine hours and 55 minutes"),
+                  PlanetDayDuration(title: "Time Relativity",duration: "One day on the Moon, "
+                      "is approximately 29.5 Earth days long."),
                   PlanetDayDuration(title: "Distance from the earth",
-                    duration: "2000000 light years",),
-                  PlanetFacts(Facts: "Facts")
+                    duration: " 0.000042 light years.",),
+                  PlanetFacts(Facts: "The Moon is gradually moving away from Earth at a rate of about 3.8 centimeters "
+                      " per year,"
+                      " which means it was closer to Earth in the past. This phenomenon is known as lunar recession.")
 
                 ],
               ),

@@ -29,15 +29,16 @@ class MainTabSpaceSun extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      PlanetTemperature(temp:"145"),
+                      PlanetTemperature(temp:"10,000°C"),
                       Spacer(),
-                      PlanetStorm(storm: "200km/hr",)
+                      PlanetStorm(storm: "1440000km/hr",)
                     ],
                   ),
-                  PlanetDayDuration(title: "Time Relativity",duration: "A day on Jupiter lasts only nine hours and 55 minutes"),
+                  PlanetDayDuration(title: "Time Relativity",duration: "Sun rotates once approximately every 24 to 25 Earth days"),
                   PlanetDayDuration(title: "Distance from the earth",
-                    duration: "2000000 light years",),
-                  PlanetFacts(Facts: "Facts")
+                    duration: "0.00001581 light years",),
+                  PlanetFacts(Facts: "The Sun's core, where nuclear fusion reactions occur, produces an immense amount of energy through the conversion of hydrogen into helium. This process generates an estimated 386 billion billion megawatts of power,"
+                      " which is equivalent to the energy output of over a trillion atomic bombs every second.")
 
                 ],
               ),
