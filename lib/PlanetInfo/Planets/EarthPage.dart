@@ -29,15 +29,15 @@ class MainTabSpaceEarth extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      PlanetTemperature(temp:"145"),
+                      PlanetTemperature(temp:"0°C to 50°C",),
                       Spacer(),
-                      PlanetStorm(storm: "200km/hr",)
+                      PlanetStorm(storm: "20km/hr",)
                     ],
                   ),
-                  PlanetDayDuration(title: "Time Relativity",duration: "A day on Jupiter lasts only nine hours and 55 minutes"),
-                  PlanetDayDuration(title: "Distance from the earth",
-                    duration: "2000000 light years",),
-                  PlanetFacts(Facts: "Facts")
+                  PlanetDayDuration(title: "Time Relativity",duration: "Time dilation due to Earth's gravity causes clocks at sea level to run slower than clocks at higher altitudes, as predicted by Einstein's theory of general relativity."),
+                  PlanetDayDuration(title: "Distance from the Sun",
+                    duration: " 0.000016 light years",),
+                  PlanetFacts(Facts: "One lesser-known fact about Earth is that it is not a perfect sphere but slightly flattened at the poles and bulging at the equator due to its rotation, making it an oblate spheroid.")
 
                 ],
               ),

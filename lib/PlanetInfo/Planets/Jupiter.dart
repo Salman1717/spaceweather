@@ -18,7 +18,7 @@ class MainTabSpaceJupiter extends StatelessWidget {
                 ),
               ),
               child: Center(
-                child: Text("Explore"),
+                child: Text(""),
               ),
             ),
             Positioned.fill(
@@ -27,15 +27,16 @@ class MainTabSpaceJupiter extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      PlanetTemperature(temp:"145"),
+                      PlanetTemperature(temp:"-110°C"),
                       Spacer(),
-                      PlanetStorm(storm: "200km/hr",)
+                      PlanetStorm(storm: "432 km/h r",)
                     ],
                   ),
                   PlanetDayDuration(title: "Time Relativity",duration: "A day on Jupiter lasts only nine hours and 55 minutes"),
                   PlanetDayDuration(title: "Distance from the earth",
-                    duration: "2000000 light years",),
-                  PlanetFacts(Facts: "Facts")
+                    duration: " 0.000053 light years.",),
+                  PlanetFacts(Facts: "Jupiter has a powerful magnetic field that is 14 times stronger than Earth's, and it generates intense radiation belts, "
+                      "making it a challenging environment for spacecraft to navigate.")
 
                 ],
               ),
