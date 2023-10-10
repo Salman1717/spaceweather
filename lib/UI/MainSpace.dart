@@ -8,7 +8,6 @@ import '../PlanetInfo/Planets/MoonPage.dart';
 import '../PlanetInfo/Planets/Saturn.dart';
 import '../PlanetInfo/Planets/Sun.dart';
 import '../PlanetInfo/Planets/Venus.dart';
-import '../weather_info.dart';
 
 const Color g1 = Color(0xFF000000);
 const Color g2 = Color(0xFF0F0F29);
@@ -41,28 +40,28 @@ class MainSpace extends StatelessWidget {
               ),
             ),
             Positioned.fill(
-              top: 60, // Adjust the top offset as needed
+              top: 30, // Adjust the top offset as needed
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child:
-                        Padding(
-                            padding: EdgeInsets.all(8), //apply padding to all four sides
-                            child: Image.asset('assets/sidebar.png',height: 30,width: 20,)),
-                      ),
-                      Spacer(),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child:
-                        Padding(
-                            padding: EdgeInsets.all(8), //apply padding to all four sides
-                            child: Image.asset('assets/navigate.png',height: 30,width: 20,)),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Align(
+                  //       alignment: Alignment.centerLeft,
+                  //       child:
+                  //       Padding(
+                  //           padding: EdgeInsets.all(2), //apply padding to all four sides
+                  //           child: Image.asset('assets/sidebar.png',height: 30,width: 20,)),
+                  //     ),
+                  //     Spacer(),
+                  //     Align(
+                  //       alignment: Alignment.centerRight,
+                  //       child:
+                  //       Padding(
+                  //           padding: EdgeInsets.all(2), //apply padding to all four sides
+                  //           child: Image.asset('assets/navigate.png',height: 30,width: 20,)),
+                  //     ),
+                  //   ],
+                  // ),
                const  SizedBox(
                 height: 5,
               ),
@@ -72,11 +71,16 @@ class MainSpace extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(10), //apply padding to all four sides
                     child: Text(
+<<<<<<< HEAD:lib/UI/MainSpace.dart
                       'Welcome',
+                      style: TextStyle(fontSize: 35, fontFamily:'Proportional_tfb' ,color: Colors.white ),
+=======
+                      ' Welcome',
                       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold,color: Colors.white ),
+>>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
                     ),),
                   ),
-                  Text(""),
+
                   HorizontalCardScroll(),
                 Text(""),
                   Text(""),
@@ -147,7 +151,11 @@ class HorizontalCardScroll extends StatelessWidget {
             Card(
             elevation: 4,
             margin: EdgeInsets.all(10),
-            color: g6,
+<<<<<<< HEAD:lib/UI/MainSpace.dart
+            color: g6.withOpacity(0.4),
+=======
+            color: g6.withOpacity(0.5),
+>>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12), // Rounded corners
 
@@ -208,17 +216,17 @@ class HorizontalCardScroll extends StatelessWidget {
 Widget getPlanetPage(String planetTitle) {
   switch (planetTitle) {
     case 'Earth':
-      return const TabBarExample(PakkaFinal: MainTabSpaceEarth());
+      return const MainTabSpaceEarth();
     case 'Moon':
-      return const TabBarExample(PakkaFinal: MainTabSpaceMoon());
+      return const MainTabSpaceMoon();
     case 'Mercury':
-      return  TabBarExample(PakkaFinal: MainTabSpaceMercury());;
+      return  MainTabSpaceMercury();
     case 'Saturn':
-      return TabBarExample(PakkaFinal: MainTabSpaceSaturn());
+      return MainTabSpaceSaturn();
     case 'Sun':
-      return const TabBarExample(PakkaFinal: MainTabSpaceSun());
+      return const MainTabSpaceSun();
     case 'Jupiter':
-      return TabBarExample(PakkaFinal: MainTabSpaceJupiter());
+      return  MainTabSpaceJupiter();
   // Add cases for other planets here
     default:
       return Container(); // Return an empty container for unsupported planets
@@ -229,7 +237,11 @@ class SpaceFacts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        color: g6,
+<<<<<<< HEAD:lib/UI/MainSpace.dart
+        color: g6.withOpacity(0.6),
+=======
+        color: g6.withOpacity(0.5),
+>>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
           // Rounded corners
@@ -245,9 +257,9 @@ class SpaceFacts extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(20.0),
               child: Text(
-                "blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh"
-                    "blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh"
-                    "blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh blabh",
+                "Extraordinary' Mysterious radio wave pulses from deep in space have been hitting Earth for decades,"
+                    " but the scientists who recently discovered them have"
+                    " no concrete explanation for the origin of the signals.",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white )
               ),
             ),
