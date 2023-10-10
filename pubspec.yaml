@@ -28,9 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+
   flutter:
     sdk: flutter
-  intl: ^0.17.0
+  intl: ^0.18.1
+  moon_phase: ^1.0.1+8
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -47,7 +51,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  http: ^0.13.3
+  http: ^1.1.0
   flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
@@ -86,7 +90,9 @@ flutter:
     - assets/home/Solarsys.avif
     - assets/home/weather.avif
     - assets/home/weather1.avif
-
+    - assets/home/Space_bg.avif
+    -
+    -
     - assets/PlanetImages/earth.jpg
     - assets/PlanetImages/jupiter.jpg
     - assets/PlanetImages/Mars.jpg
@@ -97,6 +103,18 @@ flutter:
     - assets/PlanetImages/venus.jpg
     - assets/PlanetImages/plato.png
     - assets/PlanetImages/sun.jpg
+    -
+    - assets/arview/Earth1.avif
+    - assets/arview/Moon.avif
+    - assets/arview/Mercury.jpeg
+    - assets/arview/Venus.jpeg
+    - assets/arview/Jupiter.avif
+    - assets/arview/Saturn.avif
+    - assets/arview/Sun.jpg
+    - assets/arview/Mars.avif
+    -
+    - assets/PhaseCal/tomorrow.png
+    - assets/PhaseCal/yesterday.png
 
 
 
