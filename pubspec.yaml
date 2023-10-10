@@ -70,6 +70,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - images/
     - assets/suncloud.png
     - assets/Earth.png
     - assets/moon.jpg
