@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vector_math/vector_math_64.dart' as vector64;
 
-class saturnAr extends StatefulWidget {
-  const saturnAr({super.key});
+class SaturnAr extends StatefulWidget {
+  const SaturnAr({super.key});
 
   @override
-  State <saturnAr> createState() => _ArEarthScreenState();
+  State <SaturnAr> createState() => _ArEarthScreenState();
 }
 
-class _ArEarthScreenState extends State<saturnAr> {
+class _ArEarthScreenState extends State<SaturnAr> {
   ArCoreController? augmentedRealityCoreController;
 
   augmentedRealityViewCreated(ArCoreController arCoreController){
@@ -21,7 +21,7 @@ class _ArEarthScreenState extends State<saturnAr> {
   }
 
   displayEarthSphere(ArCoreController arCoreController) async {
-    final ByteData earthTextureBytes = await rootBundle.load("images/saturn.jpg");
+    final ByteData earthTextureBytes = await rootBundle.load("arimages/saturn.jpg");
 
     final material = ArCoreMaterial(
       color: Colors.blue,
