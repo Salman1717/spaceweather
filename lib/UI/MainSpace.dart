@@ -71,13 +71,8 @@ class MainSpace extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(10), //apply padding to all four sides
                     child: Text(
-<<<<<<< HEAD:lib/UI/MainSpace.dart
-                      'Welcome',
-                      style: TextStyle(fontSize: 35, fontFamily:'Proportional_tfb' ,color: Colors.white ),
-=======
                       ' Welcome',
                       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold,color: Colors.white ),
->>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
                     ),),
                   ),
 
@@ -151,11 +146,7 @@ class HorizontalCardScroll extends StatelessWidget {
             Card(
             elevation: 4,
             margin: EdgeInsets.all(10),
-<<<<<<< HEAD:lib/UI/MainSpace.dart
-            color: g6.withOpacity(0.4),
-=======
             color: g6.withOpacity(0.5),
->>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12), // Rounded corners
 
@@ -237,11 +228,7 @@ class SpaceFacts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-<<<<<<< HEAD:lib/UI/MainSpace.dart
-        color: g6.withOpacity(0.6),
-=======
         color: g6.withOpacity(0.5),
->>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
           // Rounded corners
