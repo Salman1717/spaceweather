@@ -7,20 +7,17 @@ class MainTabSpaceJupiter extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Stack(
-          children: [
-            DecoratedBox(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/PlanetImages/jupiter.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Center(
-                child: Text(""),
-              ),
+      home:  Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/PlanetImages/jupiter.jpg"),
+              fit: BoxFit.cover,
             ),
+          ),
+          child:SafeArea(
+    child:Stack(
+          children: [
             Positioned.fill(
               top: 10 , // Adjust the top offset as needed
               child: Column(
@@ -44,6 +41,8 @@ class MainTabSpaceJupiter extends StatelessWidget {
           ],
         ),
       ),
+      )
+      )
     );
   }
 }

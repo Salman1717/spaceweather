@@ -7,8 +7,16 @@ class MainTabSpace extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Stack(
+      home:  Scaffold(
+        body:Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/PlanetImages/Mars.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+        child:SafeArea(
+        child:Stack(
           children: [
             DecoratedBox(
               decoration: BoxDecoration(
@@ -43,6 +51,6 @@ class MainTabSpace extends StatelessWidget {
           ],
         ),
       ),
-    );
+    )));
   }
 }

@@ -7,20 +7,17 @@ class MainTabSpaceSaturn extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Stack(
+      home:  Scaffold(
+        body: Container(
+        decoration: const BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage("assets/PlanetImages/saturn.jpg"),
+    fit: BoxFit.cover,
+    ),
+    ),
+        child:const SafeArea(
+        child:Stack(
           children: [
-            DecoratedBox(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/PlanetImages/saturn.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Center(
-                child: Text("Explore"),
-              ),
-            ),
             Positioned.fill(
               top: 10 , // Adjust the top offset as needed
               child: Column(
@@ -45,6 +42,6 @@ class MainTabSpaceSaturn extends StatelessWidget {
           ],
         ),
       ),
-    );
+    )));
   }
 }

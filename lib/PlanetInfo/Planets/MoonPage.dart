@@ -9,28 +9,26 @@ class MainTabSpaceMoon extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
+      home:  Scaffold(
         backgroundColor: Colors.transparent,
-        body: Stack(
-          children: [
-            DecoratedBox(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/PlanetImages/plato.png"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Center(
-                child: Text(""),
-              ),
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/PlanetImages/plato.png"),
+              fit: BoxFit.cover,
             ),
+          ),
+    child:const SafeArea(
+    child:Stack(
+          children: [
+
             Positioned.fill(
               top: 10 , // Adjust the top offset as needed
               child: Column(
                 children: [
                   Row(
                     children: [
-                      PlanetTemperature(temp:"-130°C to 120°C"),
+                      PlanetTemperature(temp:"-130°C-120°C"),
                       Spacer(),
                       PlanetStorm(storm: "∅",)
                     ],
@@ -49,6 +47,6 @@ class MainTabSpaceMoon extends StatelessWidget {
           ],
         ),
       ),
-    );
+    )));
   }
 }

@@ -25,14 +25,14 @@ class _TestmoonState extends State<Testmoon> {
   @override
   void increaseDate() {
     setState(() {
-      currentDate = currentDate.add(Duration(days: 1));
+      currentDate = currentDate.add(const Duration(days: 1));
       formattedDate = DateFormat('dd MMMM, yyyy').format(currentDate);
     });
   }
 
   void decreaseDate() {
     setState(() {
-      currentDate = currentDate.add(Duration(days: -1));
+      currentDate = currentDate.add(const Duration(days: -1));
       formattedDate = DateFormat('dd MMMM, yyyy').format(currentDate);
     });
   }

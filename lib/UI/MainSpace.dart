@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../PlanetInfo/PlanetInfo.dart';
+
 import '../PlanetInfo/Planets/EarthPage.dart';
 import '../PlanetInfo/Planets/Jupiter.dart';
 import '../PlanetInfo/Planets/MercuryPage.dart';
 import '../PlanetInfo/Planets/MoonPage.dart';
 import '../PlanetInfo/Planets/Saturn.dart';
 import '../PlanetInfo/Planets/Sun.dart';
-import '../PlanetInfo/Planets/Venus.dart';
+
 
 const Color g1 = Color(0xFF000000);
 const Color g2 = Color(0xFF0F0F29);
@@ -26,7 +26,15 @@ class MainSpace extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Stack(
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/Bg.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+    child:SafeArea(
+    child:Stack(
           children: [
             const DecoratedBox(
               decoration: BoxDecoration(
@@ -93,7 +101,7 @@ class MainSpace extends StatelessWidget {
           ],
         ),
       ),
-    );
+    )));
   }
 }
 
