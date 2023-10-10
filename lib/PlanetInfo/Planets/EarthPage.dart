@@ -9,20 +9,19 @@ class MainTabSpaceEarth extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Stack(
-          children: [
-            DecoratedBox(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/PlanetImages/earth.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Center(
-                child: Text("Explore"),
+      home:  Scaffold(
+        body: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/PlanetImages/earth.jpg"),
+                fit: BoxFit.cover,
               ),
             ),
+          child: const SafeArea(
+    child:Stack(
+
+          children: [
+
             Positioned.fill(
               top: 10 , // Adjust the top offset as needed
               child: Column(
@@ -45,6 +44,7 @@ class MainTabSpaceEarth extends StatelessWidget {
           ],
         ),
       ),
+    ))
     );
   }
 }

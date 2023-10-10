@@ -10,7 +10,7 @@ class MainTabSpace extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
       home: const Scaffold(
-        body: Stack(
+        body: SafeArea(child: Stack(
           children: [
             DecoratedBox(
               decoration: BoxDecoration(
@@ -45,7 +45,7 @@ class MainTabSpace extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }
 
@@ -115,6 +115,7 @@ class PlanetTemperature extends StatelessWidget {
                     "Temperature",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),
                   ),
+                  SizedBox(height:15),
                   Text(
                     temp,
                     style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.white),
@@ -158,11 +159,12 @@ class PlanetStorm extends StatelessWidget {
                 children: <Widget>[
                  const Text(
                     "Storm Speed",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),
                   ),
+                  SizedBox(height:15),
                   Text(
                     storm,
-                    style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: Colors.white),
                   ),
                 ],
               ),

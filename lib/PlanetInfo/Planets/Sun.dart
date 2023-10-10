@@ -9,20 +9,17 @@ class MainTabSpaceSun extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Stack(
+      home:  Scaffold(
+        body: Container(
+        decoration: const BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage("assets/PlanetImages/sun.jpg"),
+    fit: BoxFit.cover,
+    ),
+    ),
+        child:const SafeArea(
+        child:Stack(
           children: [
-            DecoratedBox(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/PlanetImages/sun.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Center(
-                child: Text("Explore"),
-              ),
-            ),
             Positioned.fill(
               top: 10 , // Adjust the top offset as needed
               child: Column(
@@ -39,13 +36,12 @@ class MainTabSpaceSun extends StatelessWidget {
                     duration: "0.00001581 light years",),
                   PlanetFacts(Facts: "The Sun's core, where nuclear fusion reactions occur, produces an immense amount of energy through the conversion of hydrogen into helium. This process generates an estimated 386 billion billion megawatts of power,"
                       " which is equivalent to the energy output of over a trillion atomic bombs every second.")
-
                 ],
               ),
             ),
           ],
         ),
       ),
-    );
+    )));
   }
 }

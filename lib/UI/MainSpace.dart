@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../PlanetInfo/PlanetInfo.dart';
+
 import '../PlanetInfo/Planets/EarthPage.dart';
 import '../PlanetInfo/Planets/Jupiter.dart';
 import '../PlanetInfo/Planets/MercuryPage.dart';
 import '../PlanetInfo/Planets/MoonPage.dart';
 import '../PlanetInfo/Planets/Saturn.dart';
 import '../PlanetInfo/Planets/Sun.dart';
-import '../PlanetInfo/Planets/Venus.dart';
+
 
 const Color g1 = Color(0xFF000000);
 const Color g2 = Color(0xFF0F0F29);
@@ -26,7 +26,15 @@ class MainSpace extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Stack(
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/Bg.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+    child:SafeArea(
+    child:Stack(
           children: [
             const DecoratedBox(
               decoration: BoxDecoration(
@@ -71,13 +79,9 @@ class MainSpace extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(10), //apply padding to all four sides
                     child: Text(
-<<<<<<< HEAD:lib/UI/MainSpace.dart
+
                       'Welcome',
                       style: TextStyle(fontSize: 35, fontFamily:'Proportional_tfb' ,color: Colors.white ),
-=======
-                      ' Welcome',
-                      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold,color: Colors.white ),
->>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
                     ),),
                   ),
 
@@ -98,7 +102,7 @@ class MainSpace extends StatelessWidget {
           ],
         ),
       ),
-    );
+    )));
   }
 }
 
@@ -151,11 +155,9 @@ class HorizontalCardScroll extends StatelessWidget {
             Card(
             elevation: 4,
             margin: EdgeInsets.all(10),
-<<<<<<< HEAD:lib/UI/MainSpace.dart
+
             color: g6.withOpacity(0.4),
-=======
-            color: g6.withOpacity(0.5),
->>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
+
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12), // Rounded corners
 
@@ -237,11 +239,8 @@ class SpaceFacts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-<<<<<<< HEAD:lib/UI/MainSpace.dart
+
         color: g6.withOpacity(0.6),
-=======
-        color: g6.withOpacity(0.5),
->>>>>>> ee5b1efdd8aca3fb180b5d3016cd8f6405062b04:lib/SpaceUI/MainSpace.dart
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
           // Rounded corners
