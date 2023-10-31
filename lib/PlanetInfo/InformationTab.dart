@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../main.dart';
-
+import 'package:spacewether/UI/MainSpace.dart';
 
 class MainTabSpace extends StatelessWidget {
   @override
@@ -37,7 +35,9 @@ class MainTabSpace extends StatelessWidget {
                   PlanetDayDuration(title: "Time Relativity",duration: "A day on Jupiter lasts only nine hours and 55 minutes"),
                   PlanetDayDuration(title: "Distance from the earth",
                   duration: "2000000 light years",),
-                  PlanetFacts(Facts: "Facts")
+                  PlanetFacts(Facts: "Facts"),
+
+
 
                 ],
               ),
@@ -215,5 +215,7 @@ class PlanetDayDuration extends StatelessWidget {
     );
   }
 }
+
+
 
 

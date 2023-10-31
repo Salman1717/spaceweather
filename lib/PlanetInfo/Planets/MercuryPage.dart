@@ -24,7 +24,7 @@ class MainTabSpaceMercury extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      PlanetTemperature(temp:"-290°C to 430°C"),
+                      PlanetTemperature(temp:"-290°C-430°C"),
                       Spacer(),
                       PlanetStorm(storm: "∅",)
                     ],

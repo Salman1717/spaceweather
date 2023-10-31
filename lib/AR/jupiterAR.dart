@@ -50,7 +50,7 @@ class _ArEarthScreenState extends State<JupiterAr> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "AR Earth"
+          "AR Jupiter"
         ),
         centerTitle: true,
       ),

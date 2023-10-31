@@ -42,6 +42,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   arcore_flutter_plugin: ^0.1.0
   vector_math: ^2.1.4
+  arkit_plugin: ^1.0.7
 
 dev_dependencies:
   flutter_test:
@@ -72,29 +73,28 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/suncloud.png
-    - assets/Earth.png
-    - assets/moon.jpg
-    - assets/solar-system.png
-    - assets/search.png
-    - assets/Bg.jpg
-    - assets/bg.png
-    - assets/Jupiter.png
-    - assets/Mercury.png
-    - assets/Moon.png
-    - assets/Saturn.png
-    - assets/Sun.png
-    - assets/right.png
-    - assets/navigate.png
-    - assets/sidebar.png
+    - assets/misc/suncloud.png
+    - assets/misc/Earth.png
+    - assets/misc/moon.jpg
+    - assets/misc/solar-system.png
+    - assets/misc/search.png
+    - assets/misc/Bg.jpg
+    - assets/misc/bg.png
+    - assets/misc/Jupiter.png
+    - assets/misc/Mercury.png
+    - assets/misc/Moon.png
+    - assets/misc/Saturn.png
+    - assets/misc/Sun.png
+    - assets/misc/right.png
+    - assets/misc/navigate.png
+    - assets/misc/sidebar.png
 
-    - assets/home/moonphs.avif
-    - assets/home/Solarsys.avif
-    - assets/home/weather.avif
-    - assets/home/weather1.avif
-    - assets/home/Space_bg.avif
-    -
-    -
+    - assets/home/moonphs.jpg
+    - assets/home/Solarsys.jpg
+    - assets/home/weather.jpg
+    - assets/home/weather1.jpg
+    - assets/home/Space_bg.jpg
+
     - assets/PlanetImages/earth.jpg
     - assets/PlanetImages/jupiter.jpg
     - assets/PlanetImages/Mars.jpg
@@ -105,16 +105,16 @@ flutter:
     - assets/PlanetImages/venus.jpg
     - assets/PlanetImages/plato.png
     - assets/PlanetImages/sun.jpg
-    -
-    - assets/arview/Earth1.avif
-    - assets/arview/Moon.avif
+
+    - assets/arview/Earth.jpg
+    - assets/arview/Moon.jpg
     - assets/arview/Mercury.jpeg
     - assets/arview/Venus.jpeg
-    - assets/arview/Jupiter.avif
-    - assets/arview/Saturn.avif
+    - assets/arview/Jupiter.jpg
+    - assets/arview/Saturn.jpg
     - assets/arview/Sun.jpg
-    - assets/arview/Mars.avif
-    -
+    - assets/arview/Mars.jpg
+
     - assets/PhaseCal/tomorrow.png
     - assets/PhaseCal/yesterday.png
 
