@@ -99,7 +99,7 @@ class PlanetTemperature extends StatelessWidget {
     return Padding(padding:EdgeInsets.all(8) ,
       child:  Container(
         width: 150,
-        height: 80,
+        height: 90,
         child: Card(
             color: Colors.white54.withOpacity(0.2),
             shape: RoundedRectangleBorder(
@@ -145,7 +145,7 @@ class PlanetStorm extends StatelessWidget {
     return Padding(padding:EdgeInsets.all(8) ,
       child:  Container(
         width: 150,
-        height: 80,
+        height: 90,
         child: Card(
             color: Colors.white54.withOpacity(0.2),
             shape: RoundedRectangleBorder(

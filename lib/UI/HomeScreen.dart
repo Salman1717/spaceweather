@@ -60,7 +60,7 @@ class HomeScreeen extends StatelessWidget {
                     destination: WeatherInfo()),
                 SizedBox(height: 30),
                 ImgCard(
-                    img: 'home/weather.jpg',
+                    img: 'home/Solarsys2.jpg',
                     title: 'SOLAR SYSTEM.',
                     destination: MainSpace()),
                 SizedBox(height: 30),
