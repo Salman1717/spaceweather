@@ -21,7 +21,7 @@ class _ArEarthScreenState extends State<MarsAr> {
 
   displayEarthSphere(ArCoreController arCoreController) async {
     final ByteData earthTextureBytes =
-        await rootBundle.load("arimages/mars.jpg");
+        await rootBundle.load("assets/arimages/mars.jpg");
 
     final material = ArCoreMaterial(
       color: Colors.blue,

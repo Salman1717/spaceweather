@@ -21,7 +21,7 @@ class _ArEarthScreenState extends State<MercuryAr> {
   }
 
   displayEarthSphere(ArCoreController arCoreController) async {
-    final ByteData earthTextureBytes = await rootBundle.load("arimages/mercury.jpg");
+    final ByteData earthTextureBytes = await rootBundle.load("assets/arimages/mercury.jpg");
 
     final material = ArCoreMaterial(
       color: Colors.blue,
@@ -50,7 +50,7 @@ class _ArEarthScreenState extends State<MercuryAr> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "AR Earth"
+          "AR Mercury"
         ),
         centerTitle: true,
       ),

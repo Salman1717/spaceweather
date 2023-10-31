@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'AR/earthAR.dart';
-import 'EarthAR.dart';
+
 import 'UI/HomeScreen.dart';
 
 const Color g1 = Color(0xff011743);
@@ -22,20 +21,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Scaffold(
-
-          body:
-              Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [g3,g2,g1]
-                ),
-              ),
-                child:
-                const HomeScreeen(),
-              ),
+      home: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [g3, g2, g1]),
+          ),
+          child: const HomeScreeen(),
+        ),
       ),
     );
   }

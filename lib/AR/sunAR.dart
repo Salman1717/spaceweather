@@ -21,7 +21,7 @@ class _ArEarthScreenState extends State<SunAr> {
   }
 
   displayEarthSphere(ArCoreController arCoreController) async {
-    final ByteData earthTextureBytes = await rootBundle.load("arimages/sun.jpg");
+    final ByteData earthTextureBytes = await rootBundle.load("assets/arimages/sun.jpg");
 
     final material = ArCoreMaterial(
       color: Colors.blue,
@@ -50,7 +50,7 @@ class _ArEarthScreenState extends State<SunAr> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "AR Earth"
+          "AR Sun"
         ),
         centerTitle: true,
       ),

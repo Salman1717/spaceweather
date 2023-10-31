@@ -21,7 +21,7 @@ class _ArEarthScreenState extends State<JupiterAr> {
   }
 
   displayEarthSphere(ArCoreController arCoreController) async {
-    final ByteData earthTextureBytes = await rootBundle.load("arimages/jupiter.jpg");
+    final ByteData earthTextureBytes = await rootBundle.load("assets/arimages/jupiter.jpg");
 
     final material = ArCoreMaterial(
       color: Colors.blue,

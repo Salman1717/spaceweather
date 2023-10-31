@@ -21,7 +21,7 @@ class _ArEarthScreenState extends State<NeptuneAr> {
   }
 
   displayEarthSphere(ArCoreController arCoreController) async {
-    final ByteData earthTextureBytes = await rootBundle.load("arimages/neptune.jpg");
+    final ByteData earthTextureBytes = await rootBundle.load("assets/arimages/neptune.jpg");
 
     final material = ArCoreMaterial(
       color: Colors.blue,
@@ -50,7 +50,7 @@ class _ArEarthScreenState extends State<NeptuneAr> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "AR Earth"
+          "AR Neptune"
         ),
         centerTitle: true,
       ),

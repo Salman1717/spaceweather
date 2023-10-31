@@ -21,7 +21,7 @@ class _ArEarthScreenState extends State<VenusAr> {
   }
 
   displayEarthSphere(ArCoreController arCoreController) async {
-    final ByteData earthTextureBytes = await rootBundle.load("arimages/venus.jpg");
+    final ByteData earthTextureBytes = await rootBundle.load("assets/arimages/venus.jpg");
 
     final material = ArCoreMaterial(
       color: Colors.blue,
@@ -50,7 +50,7 @@ class _ArEarthScreenState extends State<VenusAr> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "AR Earth"
+          "AR Venus"
         ),
         centerTitle: true,
       ),

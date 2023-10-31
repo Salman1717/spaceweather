@@ -21,7 +21,7 @@ class _ArEarthScreenState extends State<SaturnAr> {
   }
 
   displayEarthSphere(ArCoreController arCoreController) async {
-    final ByteData earthTextureBytes = await rootBundle.load("arimages/saturn.jpg");
+    final ByteData earthTextureBytes = await rootBundle.load("assets/arimages/saturn.jpg");
 
     final material = ArCoreMaterial(
       color: Colors.blue,
@@ -50,7 +50,7 @@ class _ArEarthScreenState extends State<SaturnAr> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "AR Earth"
+          "AR Saturn"
         ),
         centerTitle: true,
       ),
