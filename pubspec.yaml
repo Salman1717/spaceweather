@@ -106,14 +106,14 @@ flutter:
     - assets/PlanetImages/plato.png
     - assets/PlanetImages/sun.jpg
 
-    - assets/arview/Earth.jpg
-    - assets/arview/Moon.jpg
+    - assets/arview/Earth11.jpg
+    - assets/arview/Moon22.jpg
     - assets/arview/Mercury.jpeg
     - assets/arview/Venus.jpeg
-    - assets/arview/Jupiter.jpg
-    - assets/arview/Saturn.jpg
+    - assets/arview/Jupiter66.jpg
+    - assets/arview/Saturn77.jpg
     - assets/arview/Sun.jpg
-    - assets/arview/Mars.jpg
+    - assets/arview/Mars33.jpg
 
     - assets/PhaseCal/tomorrow.png
     - assets/PhaseCal/yesterday.png
